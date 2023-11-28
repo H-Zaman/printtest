@@ -37,7 +37,7 @@ class _PrintPageState extends State<PrintPage> {
               PrinterStatus status = await FlutterPaxPrinterUtility.getStatus;
 
               if(status == PrinterStatus.SUCCESS){
-                await FlutterPaxPrinterUtility.spaceSet(0, 10);
+                await FlutterPaxPrinterUtility.init;
                 await FlutterPaxPrinterUtility.setGray(1);
                 await FlutterPaxPrinterUtility.printStr('TEST PRINT IMAGE', null);
                 await FlutterPaxPrinterUtility.printImageAsset('assets/splash_logo.png');
